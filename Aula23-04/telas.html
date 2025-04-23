@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            min-height: 100svh;
+            background-color: lightgray;
+            display: grid;
+        }
+        #box1{
+            grid-area: cabecario;
+        }
+        #box2{
+            grid-area: menu;
+        }
+
+        #box3{
+            grid-area: principal;
+        }
+        #box4{
+            grid-area: aside;
+        }
+        #box5{
+            grid-area: rodape;
+        }
+
+        .box{
+            border: 1px solid black;
+
+            @media screen and (max-width: 500px) {
+                grid-template-areas: "cabecario" "menu" "principal" "aside" "rodape";
+            }
+        }
+            @media screen and (min-width: 500px) and (max-width: 600px) {
+                body{
+                    background-color: lightblue;
+                    grid-template-areas: "cabecario cabecario" "menu principal" "aside aside" "rodape rodape";
+                }
+                
+            }
+
+            @media screen and (min-width: 600px) and (max-width: 900px){
+                body{
+                    background-color: blueviolet;
+                    grid-template-areas: "cabecario cabecario cabecario" "menu principal aside" "rodape rodape rodape";
+                }
+                
+            }
+            @media screen and (min-width: 900px) {
+                body{
+                    background-color: blue;
+                    grid-template-areas: "cabecario cabecario cabecario" "menu principal aside" "rodape rodape rodape";
+                }
+                
+            }
+
+    </style>
+    
+</head>
+<body>
+    <div class="box" id="box1">cabecario</div>
+    <div class="box" id="box2">menu</div>
+    <div class="box" id="box3">principal</div>
+    <div class="box" id="box4">aside</div>
+    <div class="box" id="box5">rodape</div>
+</body>
+</html>
