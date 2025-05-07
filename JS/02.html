@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - atividade 2</title>
+</head>
+<body>
+
+    <script>
+
+         /*Faça um programa que solicite ao usuário um número, usando prompt e em seguida faça a contagem até esse numero, imprimindo cada elemento no console */
+         let n1 = Number(prompt("digite um numero"))
+
+            for (i=0; i<=n1; i++){
+                console.log(i);
+            }
+
+        /*Adicione um elemneto de lestagem ao body e adicione cada numero, de contagem, a um item <li>*/ 
+
+            let lista =document.createElement("ul")
+            lista.style.display ="flex"
+            
+            document.body.appendChild(lista)
+
+            for (i=0; i<n1; i++){
+                item=document.createElement("li")
+                item.innerHTML=i 
+                item.id="n1" + i
+                lista.appendChild(item);
+
+        //Altere a cor de fundo para vermelho dos items que contém números pares
+        
+                if(i%2 ==0 ){
+                item.style.backgroundColor ="#FF0000";
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
