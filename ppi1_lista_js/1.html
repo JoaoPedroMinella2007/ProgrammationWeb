@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O que é JavaScript?</title>
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            text-align: center;
+        }
+        i{
+            color:green
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        alert("Olá, usuário. Esta página está falando sobre JavaScript!")
+        console.log("Olá Dev. Apenas você está vendo esta mensagem!")
+    </script>
+
+    <h1 id="titulo">O que é JavaScript?</h1>
+    <p id="paragrafo">
+        <b>A) Motivo para a criação do JavaScript</b>
+    <br>
+    <br>
+        O JavaScript foi criado em 1995 por Brendan Eich, na época funcionário da empresa Netscape Communications.
+        A motivação principal foi a necessidade de adicionar interatividade às páginas web, 
+        que até então eram essencialmente estáticas e dependiam de recarregamentos constantes para qualquer atualização
+        de conteúdo.
+    <br>
+    <br>
+        <b>B) A diferença entre execução no navegador e no servidor</b>
+    <br>
+    <br>
+        A execução do JavaScript pode ocorrer tanto no navegador (client-side) quanto no servidor (server-side),
+        e a principal diferença entre essas duas abordagens está no ambiente e no propósito do código.
+        Quando executado no navegador, o JavaScript é interpretado diretamente pelo software do usuário, 
+        sendo utilizado principalmente para proporcionar interatividade, como responder a eventos, manipular elementos 
+        da interface e atualizar conteúdos de forma dinâmica, sem necessidade de recarregar a página.
+    <br>
+    <br>
+        Por outro lado, com o surgimento de ambientes como o Node.js, o JavaScript também passou a ser utilizado no lado
+        do servidor, onde é executado antes que as respostas sejam enviadas ao cliente. Nesse contexto, o código é responsável
+        por realizar processamentos mais complexos, como o acesso a bancos de dados, a autenticação de usuários e a geração de
+        conteúdo dinâmico. Assim, pode-se afirmar que, enquanto no navegador o JavaScript visa melhorar a experiência do usuário,
+        no servidor ele é voltado para o processamento da lógica da aplicação.
+    <br>
+    <br>
+        <b>C) O conceito de sandbox no navegador</b>
+    <br>
+    <br>
+        O conceito de sandbox no navegador refere-se a um mecanismo de segurança que isola a execução do código JavaScript, 
+        limitando suas ações e evitando que ele acesse recursos sensíveis do sistema operacional do usuário.
+        Esse isolamento impede, por exemplo, que o JavaScript leia ou modifique arquivos locais, execute programas externos ou interfira
+        em outras aplicações instaladas na máquina.
+    <br>
+    <br>
+        A sandbox garante que o código só possa interagir com elementos e APIs especificamente autorizadas pelo navegador, como a manipulação do DOM, 
+        o armazenamento local e a realização de requisições HTTP. Essa estrutura é fundamental para proteger a privacidade e a segurança dos usuários, 
+        especialmente considerando que o JavaScript é frequentemente executado automaticamente ao se acessar páginas da web. Assim, a sandbox permite 
+        o funcionamento de recursos dinâmicos e interativos, mas dentro de limites rigorosamente controlados.
+    <br>
+    <br>
+        <b>D) Objetos globais como <i>document</i>,<i>console</i> e <i>alert</i></i></b>
+    <br>
+    <br>
+        O objeto <strong>document</strong> representa a estrutura da página web, organizada segundo o DOM (Document Object Model), e permite que o programador acesse,
+        manipule e modifique dinamicamente os elementos HTML. Por meio dele, é possível, por exemplo, alterar o conteúdo de um parágrafo, 
+        criar novos elementos ou responder a interações do usuário.
+    <br>
+    <br>
+        Já o objeto <strong>console</strong> é amplamente utilizado para fins de depuração e análise do comportamento do código. Ele permite que mensagens, 
+        valores de variáveis e informações sobre o estado da execução sejam exibidas no console de desenvolvimento do navegador, facilitando a identificação de erros
+        e a validação de lógicas implementadas.
+    <br>
+    <br>
+        Por fim, o <strong>alert</strong> é uma função que exibe uma caixa de diálogo modal com uma mensagem ao usuário, pausando a execução do script até que o botão de confirmação ("OK")
+        seja pressionado. Embora seja útil para apresentar notificações rápidas, seu uso é geralmente desaconselhado em aplicações mais complexas, pois interrompe o fluxo de interação com a página.
+    <br>
+    <br>
+        Dessa forma, esses objetos globais são recursos fundamentais para a criação de páginas web dinâmicas e interativas, além de serem essenciais no processo de desenvolvimento e manutenção de aplicações em JavaScript.     
+    </p>
+    <br>
+    <br>
+
+    <p><b>Horário de acesso:</b> <span id="hora"></span></p>
+
+    <script>
+
+    //Função para exibir o horário no documento 
+    function mostrarHora() {
+      const agora = new Date(); // cria um objeto de data com o horário atual
+      const horaFormatada = agora.toLocaleTimeString(); // pega só a hora, minutos e segundos formatados
+
+      document.getElementById("hora").textContent = horaFormatada; // coloca essa hora dentro do span
+    }
+
+    mostrarHora(); 
+
+    </script>
+    
+</body>
+</html>
