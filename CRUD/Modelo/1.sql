@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS crud;
+
+USE crud;
+
+CREATE TABLE IF NOT EXISTS Usuario(
+
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(200),
+    email VARCHAR(200),
+    senha VARCHAR(200)
+
+)
+
+CREATE TABLE IF NOT EXISTS produtos(
+
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(200),
+    valor DECIMAL(2,2)
+
+)
