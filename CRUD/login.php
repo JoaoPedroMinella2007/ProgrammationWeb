@@ -6,14 +6,16 @@
     <title>Login</title>
 </head>
 <body>
+    
     <form action="rota.php?rota=autenticacao" method="post">
-        <label for="email">login</label>
+        <label for="email" > login </label>
         <input type="email" id="email" name="email">
 
-        <label for="senha">senha</label>
+        <label for="senha" > senha </label>
         <input type="senha" id="senha" name="senha">
 
         <input type="submit" value="autenticar">
-    </form>
+    </form> 
+
 </body>
 </html>
