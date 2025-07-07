@@ -1,11 +1,11 @@
 <?php
 
-include_once __DIR__.'./modelo/Conexao.php';
-include_once __DIR__.'./modelo/Usuario.php';
-include_once __DIR__.'./modelo/UsuarioDAO.php';
-include_once __DIR__.'./modelo/UsuarioDAO.php';
-include_once __DIR__.'./controlador/AuthController.php';
-include_once __DIR__.'./controlador/CadastroController.php';
+include_once __DIR__.'./Modelo/Conexao.php';
+include_once __DIR__.'./Modelo/Usuario.php';
+include_once __DIR__.'./Modelo/UsuarioDAO.php';
+include_once __DIR__.'./Modelo/UsuarioDAO.php';
+include_once __DIR__.'./Controlador/AuthController.php';
+include_once __DIR__.'./Controlador/CadastroController.php';
 session_start();
 
 
