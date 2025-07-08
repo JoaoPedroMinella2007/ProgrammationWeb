@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Números Primos no Intervalo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Descubra Números Primos</h1>
+
+<label for="inicio">Início:</label>
+<input type="number" id="inicio" value="1">
+<br><br>
+
+<label for="fim">Fim:</label>
+<input type="number" id="fim" value="100">
+<br><br>
+
+<button onclick="verificarPrimos()">Verificar</button>
+
+<h2>Resultado</h2>
+<div id="resultadoPrimos"></div>
+
+<script>
+    function verificarPrimos() {
+        const inicio = parseInt(document.getElementById('inicio').value);
+        const fim = parseInt(document.getElementById('fim').value);
+        const resultadoDiv = document.getElementById('resultadoPrimos');
+
+        if (isNaN(inicio) || isNaN(fim) || inicio > fim || inicio < 0 || fim < 0) {
+            resultadoDiv.textContent = 'Por favor, informe um intervalo válido e positivo.';
+            return;
+        }
+
+        const primos = [];
+
+        for (let num = inicio; num <= fim; num++) {
+            if (ehPrimo(num)) {
+                primos.push(num);
+            }
+        }
+
+        if (primos.length === 0) {
+            resultadoDiv.textContent = 'Nenhum número primo encontrado nesse intervalo.';
+        } else {
+            resultadoDiv.textContent = 'Números primos encontrados: ' + primos.join(', ');
+        }
+    }
+
+    function ehPrimo(n) {
+        if (n < 2) return false;
+        if (n === 2) return true;
+        if (n % 2 === 0) return false;
+        for (let i = 3; i <= Math.sqrt(n); i += 2) {
+            if (n % i === 0) return false;
+        }
+        return true;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Verificador de Palíndromos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Verificador de Palíndromos</h1>
+
+<label for="palavra">Digite uma palavra:</label>
+<input type="text" id="palavra">
+<br><br>
+
+<button onclick="verificarPalindromo()">Verificar</button>
+
+<h2>Resultado</h2>
+<p id="resultadoPalindromo"></p>
+
+<script>
+    function verificarPalindromo() {
+        const palavra = document.getElementById('palavra').value.trim().toLowerCase();
+
+        if (!palavra) {
+            document.getElementById('resultadoPalindromo').textContent = 'Digite uma palavra válida!';
+            return;
+        }
+
+        const reverso = palavra.split('').reverse().join('');
+
+        if (palavra === reverso) {
+            document.getElementById('resultadoPalindromo').textContent = `"${palavra}" é um palíndromo!`;
+        } else {
+            document.getElementById('resultadoPalindromo').textContent = `"${palavra}" não é um palíndromo.`;
+        }
+    }
+</script>
+
+</body>
+</html>

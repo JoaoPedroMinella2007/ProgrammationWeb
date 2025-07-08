@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cor de Fundo Aleatória</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #54a3e3; /* cor inicial */
+      font-family: Arial, sans-serif;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="alterarCorDeFundo()">Alterar Cor de Fundo</button>
+
+  <script>
+    function alterarCorDeFundo() {
+      const corAleatoria = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+      document.body.style.backgroundColor = corAleatoria;
+    }
+  </script>
+</body>
+</html>
