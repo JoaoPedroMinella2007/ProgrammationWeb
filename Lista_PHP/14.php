@@ -1,22 +1,11 @@
-CREATE TABLE usuarios (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
-    telefone VARCHAR(20) NOT NULL
-);
-
-
 <?php
-// Configurações do banco de dados - altere conforme seu ambiente
 $host = "localhost";
 $user = "seu_usuario";
 $pass = "sua_senha";
 $dbname = "seu_banco";
 
-// Criar conexão
 $conn = new mysqli($host, $user, $pass, $dbname);
 
-// Checar conexão
 if ($conn->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);
 }
@@ -24,12 +13,10 @@ if ($conn->connect_error) {
 $msg = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Receber dados do formulário
     $nome = $conn->real_escape_string($_POST['nome']);
     $email = $conn->real_escape_string($_POST['email']);
     $telefone = $conn->real_escape_string($_POST['telefone']);
 
-    // Montar e executar a query de inserção
     $sql = "INSERT INTO usuarios (nome, email, telefone) VALUES ('$nome', '$email', '$telefone')";
 
     if ($conn->query($sql) === TRUE) {
