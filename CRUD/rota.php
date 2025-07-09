@@ -32,7 +32,7 @@ switch($rota){
     case 'cadastro':
         $cadastro = new CadastroController();
         $cadastro ->cadastro();
-            header("Location:cadastroUsuario.php");
+            header("Location:CadastroUsuario.php");
             break;
 
     case 'home':
@@ -44,6 +44,7 @@ switch($rota){
 
             header("Location:rota.php");
             break;
+
 
     default:
     echo "rota desconhecida";
